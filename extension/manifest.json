@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "TikTok Hate Speech Detector",
+  "version": "1.0",
+  "description": "Detects hate speech in TikTok videos using AI.",
+  "permissions": ["tabCapture", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.tiktok.com/*", "*://*.youtube.com/*", "<all_urls>"],
+      "js": ["content_ui.js", "content_capture.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
