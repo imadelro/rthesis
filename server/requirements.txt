@@ -1,0 +1,8 @@
+Flask
+flask-cors
+openai
+transformers
+sentencepiece
+torch
+faster-whisper
+numpy
